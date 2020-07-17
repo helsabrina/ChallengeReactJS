@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import api from "./services/api";
+
+import Header from './components/Header/index.jsx';
+import Main from './components/Main/index.jsx';
+import GlobalStyles from './styles/GlobalStyles';
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <Main />
+      <GlobalStyles />
+      {/* <>
+        <ul>
+          { subreddit.map( banana => (
+            <li key={banana.id}>{banana.name}</li>
+          )) }
+        </ul>
+      </> */}
     </div>
   );
 }
 
-export default App;
