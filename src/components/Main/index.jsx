@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 
 import api from '../../services/api';
 
-import { Container, Break } from './style';
+import { Container, Break, PostsList, Post, InfoList, Thumb } from './style';
 import hot from '../../assets/hot.svg';
 import news from '../../assets/news.svg';
 import rising from '../../assets/rising.svg';
+import more from '../../assets/more.svg';
 
 export default function Main() {
 
@@ -16,12 +17,15 @@ export default function Main() {
     }, []);
   
     async function getSubreddit() {
-      const post = await api.get(``);
+    //   const post = await api.get(``);
 
-      setSubreddit(post.data.data.children);
+    //   setSubreddit(post.data.data.children);
+        const post = await api.get(`r/reactjs/`);
+
+        setSubreddit(post.data.data.children);
     }
     getSubreddit();
-    console.log(subreddit);
+
     return (
         <Container>
             <button type="button">
@@ -37,13 +41,31 @@ export default function Main() {
                 <p>Rising</p>
             </button>
             <Break/>
-            <div>
-                <>
+            <PostsList>
+                <Post>
                     {subreddit.map(posts => (
-                        <li>{posts.data.title}</li>
-                    ))}
-                </>
-            </div>
+                            <li>
+                                <InfoList>
+                                    <Thumb><img src={posts.data.thumbnail} alt=""/></Thumb>
+                                    <div>
+                                        <h4>{posts.data.title}</h4>
+                                        <h5>
+                                            <span>Enviado em {(new Date(posts.data.created)).toLocaleDateString() }</span> 
+                                            <> por</>
+                                            <span> {posts.data.author}</span>
+                                        </h5>
+                                        <p> {posts.data.domain}</p>
+                                    </div>
+                                </InfoList>
+                                <Break/>
+                            </li>
+                        ))}
+                </Post>
+                    <button type="button">
+                        <img src={more} alt="more"/>
+                        <p>Ver mais</p>
+                    </button>
+            </PostsList>
 
         </Container>
     );

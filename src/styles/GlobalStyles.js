@@ -11,11 +11,11 @@ export default createGlobalStyle`
         height: 100%;
         background-color: #FCFCFC;
         display: flex;
+        font-family: 'Roboto', sans-serif;
     }
     
     *, button, input {
         border: 0;
         outline: 0;
-        font-family: 'Roboto', sans-serif;
     }
 `;
