@@ -1,5 +1,5 @@
 ## :memo: Sobre
-<p>Se trata de um desafio onde é preciso ler dados da api do reddit e retornar eles mediante ao subreddit escolhido (reactjs). </strong>.</p> 
+<p>Se trata de um desafio onde é preciso ler dados da api do reddit e retornar eles mediante ao subreddit escolhido (reactjs)</strong>.</p> 
 
 ## :computer: Tecnologias utilizadas
 <ul>
