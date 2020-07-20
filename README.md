@@ -10,7 +10,7 @@
 ## :heavy_check_mark: Pré-requisitos
 É necessário que você tenha o ambiente configurado para rodar a aplicação. Para isso instale o React. <strong>Caso já tenha instalado, verifique a versão</strong>.
 
- ## ![gif](https://github.com/helsabrina/DiscordUIClone/blob/master/demo/ui-clone.gif)
+ ## ![gif](https://github.com/helsabrina/ChallengeReactJS/blob/master/demo/gif.gif)
 
 ## :bookmark_tabs: Manual
 :arrow_right: Abra a pasta do repositório em sua IDE de desenvolvimento (ex: Visual Studio Code).
@@ -23,4 +23,5 @@
 
 :arrow_right: E abra http://localhost:3000/ para poder visualizar a aplicação. <br>
 
-<strong>Projeto hospedado:</strong> https://helsabrina.github.io/ChallengeReactJS/ <strong>OBS: A página inicial não retorna nenhuma dado por conta da uri de hospedagem do github-pages. Utilize os botões!</strong> 
+<strong>Projeto hospedado:</strong> https://helsabrina.github.io/ChallengeReactJS/ 
+<strong>OBS: A página inicial não retorna nenhuma dado por conta da uri de hospedagem do github-pages. Utilize os botões!</strong> 
