@@ -21,7 +21,7 @@
 :arrow_right: Em seguida, digite:<br>
 `npm start`
 
-:arrow_right: E abra http://localhost:3000/ para poder visualizar a aplicação. <br>
+:arrow_right: E abra http://localhost:3000/ para poder visualizar a aplicação.<br>
 
 <strong>Projeto hospedado:</strong> https://helsabrina.github.io/ChallengeReactJS/ 
 <strong>OBS: A página inicial não retorna nenhuma dado por conta da uri de hospedagem do github-pages. Utilize os botões!</strong> 
