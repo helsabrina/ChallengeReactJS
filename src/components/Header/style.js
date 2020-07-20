@@ -15,6 +15,7 @@ export const SideBar = styled.div`
     display: flex;
     align-content: center;
     justify-content: center;
+    flex-wrap: wrap;
 `;
 
 export const Button = styled.a`
@@ -26,6 +27,7 @@ export const Button = styled.a`
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 
     img {
         margin-right: 10px;
@@ -38,6 +40,7 @@ export const Button = styled.a`
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-wrap: wrap;
  
     }
 

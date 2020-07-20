@@ -15,7 +15,8 @@ export default function Header() {
                 <a href="/"><img src={logo} alt="logo"/></a>
             </Section>
             <SideBar>
-            <Button><NavLink to="/hot" 
+                <Button>
+                        <NavLink to="/hot" 
                                 activeStyle={{ 
                                 color: "#FF5722", 
                                 backgroundColor: "#242424", 
@@ -24,12 +25,14 @@ export default function Header() {
                                 borderRadius: "10px",
                                 display: "flex",
                                 alignItems: "center",
-                                justifyContent: "center",}}>
+                                justifyContent: "center",
+                                flexWrap: "wrap"}}>
                                     <img src={hot} alt="logo"/> 
                                         Hot
                         </NavLink>
                 </Button>
-            <Button><NavLink to="/new" 
+                <Button>
+                        <NavLink to="/new" 
                                 activeStyle={{ 
                                 color: "#FF5722", 
                                 backgroundColor: "#242424", 
@@ -38,12 +41,14 @@ export default function Header() {
                                 borderRadius: "10px",
                                 display: "flex",
                                 alignItems: "center",
-                                justifyContent: "center",}}>
+                                justifyContent: "center",
+                                flexWrap: "wrap"}}>
                                     <img src={news} alt="logo"/> 
                                         News
                         </NavLink>
                 </Button>
-                <Button><NavLink to="/rising" 
+                <Button>
+                        <NavLink to="/rising" 
                                 activeStyle={{ 
                                 color: "#FF5722", 
                                 backgroundColor: "#242424", 
@@ -52,7 +57,8 @@ export default function Header() {
                                 borderRadius: "10px",
                                 display: "flex",
                                 alignItems: "center",
-                                justifyContent: "center",}}>
+                                justifyContent: "center",
+                                flexWrap: "wrap"}}>
                                     <img src={rising} alt="logo"/> 
                                         Rising
                         </NavLink>
