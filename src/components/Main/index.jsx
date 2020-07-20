@@ -9,7 +9,7 @@ import more from '../../assets/more.svg';
 
 export default function Main() {
 
-    const [ subreddit, setSubreddit ] = useState([]);
+    const [subreddit, setSubreddit] = useState([]);
 
     useEffect(() => {
   
@@ -48,7 +48,6 @@ export default function Main() {
                         ))}
                 </Post>
             </PostsList>
-
         </Container>
     );
 };
