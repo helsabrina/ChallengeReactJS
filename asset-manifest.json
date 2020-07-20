@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.js": "/ChallengeReactJS/static/js/main.10b66c77.chunk.js",
+    "main.js.map": "/ChallengeReactJS/static/js/main.10b66c77.chunk.js.map",
+    "runtime-main.js": "/ChallengeReactJS/static/js/runtime-main.0082c3f9.js",
+    "runtime-main.js.map": "/ChallengeReactJS/static/js/runtime-main.0082c3f9.js.map",
+    "static/js/2.b34a29d3.chunk.js": "/ChallengeReactJS/static/js/2.b34a29d3.chunk.js",
+    "static/js/2.b34a29d3.chunk.js.map": "/ChallengeReactJS/static/js/2.b34a29d3.chunk.js.map",
+    "index.html": "/ChallengeReactJS/index.html",
+    "precache-manifest.0d88f4c437a8ee15d4944a1a3f2290cf.js": "/ChallengeReactJS/precache-manifest.0d88f4c437a8ee15d4944a1a3f2290cf.js",
+    "service-worker.js": "/ChallengeReactJS/service-worker.js",
+    "static/js/2.b34a29d3.chunk.js.LICENSE.txt": "/ChallengeReactJS/static/js/2.b34a29d3.chunk.js.LICENSE.txt",
+    "static/media/hot.svg": "/ChallengeReactJS/static/media/hot.407ed75d.svg",
+    "static/media/logo.svg": "/ChallengeReactJS/static/media/logo.764ceaa5.svg",
+    "static/media/news.svg": "/ChallengeReactJS/static/media/news.262be12c.svg",
+    "static/media/rising.svg": "/ChallengeReactJS/static/media/rising.d0096c51.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0082c3f9.js",
+    "static/js/2.b34a29d3.chunk.js",
+    "static/js/main.10b66c77.chunk.js"
+  ]
+}
