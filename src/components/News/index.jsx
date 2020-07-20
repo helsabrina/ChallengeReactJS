@@ -7,7 +7,7 @@ import 'moment/locale/pt-br';
 import { Container, Break, PostsList, Post, InfoList, Thumb, InfoPost } from './style';
 import more from '../../assets/more.svg';
 
-export default function Main() {
+export default function News() {
 
     const [ subreddit, setSubreddit ] = useState([]);
 
@@ -19,7 +19,7 @@ export default function Main() {
     //   const post = await api.get(``);
 
     //   setSubreddit(post.data.data.children);
-        const post = await api.get(`r/reactjs/`);
+        const post = await api.get(`r/reactjs/new`);
 
         setSubreddit(post.data.data.children);
     }

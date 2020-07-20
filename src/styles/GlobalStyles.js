@@ -11,6 +11,7 @@ export default createGlobalStyle`
         height: 100%;
         background-color: #FCFCFC;
         display: flex;
+        flex-direction: column;
         font-family: 'Roboto', sans-serif;
     }
     
