@@ -1,7 +1,5 @@
 import React from 'react';
-import {BrowserRouter,Switch,Route,Link} from "react-router-dom";
-
-import api from "./services/api";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Header from './components/Header';
 import Main from './components/Main';

@@ -5,7 +5,6 @@ import * as moment from 'moment';
 import 'moment/locale/pt-br';
 
 import { Container, Break, PostsList, Post, InfoList, Thumb, InfoPost } from './style';
-import more from '../../assets/more.svg';
 
 export default function Hot() {
 
