@@ -1,10 +1,16 @@
 import React from 'react';
-
-
-
-function ButtonNav() {
+import { ButtonNavLink } from './style';
+ 
+function ButtonNav( {to, children} ) {
     return (
-        
+        <>
+            <ButtonNavLink 
+                to={to} 
+                activeClassName="ButtonActive"
+            >
+                {children}
+            </ButtonNavLink>
+        </>
     );
 }
 

@@ -1,5 +1,30 @@
 import styled from 'styled-components';
 
+export const MessageError = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+
+    button {
+        margin-top: 30px;
+        width: 200px;
+        height: 45px;
+        border-radius: 10px;
+        background-color: #ff571fe3;
+        color: #f9f9f9;
+        font-size: 16px;
+        cursor: pointer;
+
+        &:hover{
+            transition: 0.4s;
+            opacity: 0.9;
+            color: #fff;
+        }
+    }
+`;
+
 export const Container = styled.div`
     display: flex;
     justify-content: center;
@@ -58,7 +83,6 @@ export const InfoPost = styled.div`
 
     h4 {
         font-weight: 500;
-        width: 
     }
 
     span {
