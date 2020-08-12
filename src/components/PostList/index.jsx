@@ -1,124 +1,98 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 
-import api from '../../services/api';
-import * as moment from 'moment'; 
-import 'moment/locale/pt-br';
+import api from '../../services/api'
+import * as moment from 'moment' 
+import 'moment/locale/pt-br'
 
-import { MessageError, Container, Break, PostsList, Post, InfoList, Thumb, InfoPost } from './style';
+import { PostsList, PostListContainer, Post, Thumb, PostInfo, Break, MessageError } from './style'
 
 
 export default function PostList() {
-    
-    const { topic } = useParams();
-    
-    let loader;
-    
-    const [ postList, setPostList ] = useState([]);
-    const [ after, setAfter ] = useState('');
-    const [error, setError] = useState(false);
-    const [ loading, setLoading  ] = useState(false);
-    
+    const { topic } = useParams()
+    const [ postList, setPostList ] = useState([])
+    const [ after, setAfter ] = useState('')
+    const [error, setError] = useState(false)
+    const [ loading, setLoading  ] = useState(false)
 
-    async function getPostList() {
+    async function getPostList(reset) {
         setError(false)
 
-        const afterUrl = after ? `&after=${after}` : '';
-
+        const afterUrl = after && !reset ? `/&after=${after}` : '';
+        
         try {
-            const post = await api.get(`r/reactjs/${topic}?limit=1${afterUrl}`);
-            console.log(postList)
-            setPostList([
-                ...postList,
-                ...post.data.data.children
-            ])
+            setLoading(true)
+            const post = await api.get(`r/reactjs/${topic}?limit=5${afterUrl}`);
+            
+            if (reset) {
+                setPostList([
+                    ...post.data.data.children
+                ])
+            } else {
+                setPostList([
+                    ...postList,
+                    ...post.data.data.children
+                ])
+            }
+            setLoading(false)
             setAfter(post.data.data.after)
         } catch(err) {
             setError(err.message)
         };
-
-        // try {
-        //     setLoading(true)
-        //     const post = await api.get(`r/reactjs/${topic}?limit=20&after=${after}`);
-        //     setPostList([
-        //         ...postList,
-        //         ...post.data.data.children
-        //     ]);
-        //     setLoading(false)
-        //     console.log(post.data.data.after)
-        //     setAfter(post.data.data.after)
-        // } catch(err) {
-        //     setError(err.message)
-        //     console.log(err)
-        // };
+        
     }
-    console.log('um', postList)
+    
     useEffect(() => {
-        console.log('troquei hein')
-        setAfter('')
-        setPostList([])
-        getPostList()
-        console.log(postList, 'dois')
+        getPostList(true)
     }, [topic]);
-
-
-    // if (error) {
-    //     return (
-    //         <MessageError>
-    //             <h3>Aconteceu algo! :(</h3>
-    //             <button onClick={getPostList} type="button">Tente Novamente</button>
-    //         </MessageError>
-    //     )
-    // }
-
-
-    return (
-            <Container>
-                <PostsList>
-                    <Post>
+            
+            return (
+                <PostsList>     
+                    <PostListContainer>
                         {postList.map(posts => (
-                                <li key={posts.data.id}>
-                                    <InfoList>
+                            <li key={posts.data.id}>
+                                    <Post>
                                         <Thumb><img src={posts.data.thumbnail} alt=""/></Thumb>
-                                        <InfoPost>
+                                        <PostInfo>
                                             <h4>{posts.data.title}</h4>
                                             <h5>
                                                 <span>Enviado {moment(posts.data.created*1000).fromNow()}</span> 
                                                 <> por </>
-                                                <span>{posts.data.author}</span>
+                                                    <span>{posts.data.author}</span>
                                             </h5>
                                             <p> {posts.data.domain}</p>
-                                            {posts.err}
-                                        </InfoPost>
-                                    </InfoList>
-
-
+                                        </PostInfo>
+                                    </Post>
                                     <Break/>
                                 </li>
                         ))}
-                        
+                            
                         {!loading && after &&
-                                                <MessageError>
-                                                    <button onClick={getPostList} type="button"> MOSTRAR MAIS</button>
-                                                </MessageError>
+                            <MessageError>
+                                <button onClick={() => getPostList(false)} type="button"> MOSTRAR MAIS</button>
+                            </MessageError>
                         }
 
-                        {loading && 
-                                    <MessageError>
-                                        <h3>Carregando...</h3>
-                                    </MessageError>
+                        {loading && !error &&
+                            <MessageError>
+                                <h3>Carregando...</h3>
+                            </MessageError>
                         }
 
-                        {error && <h1>oie erro</h1>}
-
-                        {!after && 
-                                    <MessageError>
-                                        <h3>Ops, parece que acabou os posts :(</h3>
-                                    </MessageError>
+                        {error && 
+                            <MessageError>
+                                <h3>Aconteceu algo! :(</h3>
+                                <button onClick={() => getPostList(false)} type="button">Tente Novamente</button>
+                            </MessageError>
                         }
 
-                    </Post>
-                </PostsList>
-            </Container>   
+                        {(!after && !error) && (
+                            <MessageError>
+                                <h3>Ops, parece que os posts acabaram :(</h3>
+                            </MessageError>
+                        )}
+
+                    </PostListContainer>
+                </PostsList>  
     );
 };

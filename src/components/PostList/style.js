@@ -1,5 +1,18 @@
 import styled from 'styled-components';
 
+export const PostsList = styled.div`
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+`;
+
 export const MessageError = styled.div`
     display: flex;
     flex-direction: column;
@@ -25,13 +38,6 @@ export const MessageError = styled.div`
     }
 `;
 
-export const Container = styled.div`
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    
-`;
-
 export const Break = styled.div`
     margin: 30px auto;
     width: 100%;
@@ -40,17 +46,8 @@ export const Break = styled.div`
     display: flex;
 `;
 
-export const PostsList = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    
-`;
 
-export const Post = styled.div`
+export const PostListContainer = styled.div`
     margin-top: 33px;
     width: 80%;
     display: flex;
@@ -73,12 +70,12 @@ export const Thumb = styled.div`
     }
 `;
 
-export const InfoList = styled.div`
+export const Post = styled.div`
     display: flex;
     width: 100%;
 `;
 
-export const InfoPost = styled.div`
+export const PostInfo = styled.div`
     padding: 0 10px;
 
     h4 {
